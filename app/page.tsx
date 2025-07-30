@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import WebIcon from "@/components/webIcon";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { MdPhone } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -16,9 +19,9 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img
-                src="https://static.readdy.ai/image/c5957e8dc1f6ecb238bc8fb2cc6df703/f65b84f7acdc275d4b058aa8a3602560.jfif"
+                src="/images/logo.jpeg"
                 alt="Yaoundé Labelle"
-                className="h-10 w-auto sm:h-12"
+                className="h-10 w-10 object-cover rounded-sm"
               />
             </div>
 
@@ -149,15 +152,17 @@ export default function Home() {
         id="accueil"
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://readdy.ai/api/search-image?query=Large%20African%20construction%20materials%20warehouse%20with%20sand%2C%20gravel%2C%20granite%20piles%2C%20wooden%20planks%2C%20heavy%20trucks%2C%20African%20workers%20in%20safety%20gear%2C%20warm%20sunset%20lighting%2C%20industrial%20African%20landscape%2C%20professional%20construction%20site%20with%20organized%20material%20storage%2C%20earthen%20tones%20and%20warm%20colors%2C%20authentic%20African%20construction%20industry%20scene%2C%20high%20quality%20business%20photography&width=1920&height=1080&seq=hero-main&orientation=landscape')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/camion.jpg')`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
         }}
       >
         <div className="text-center text-white max-w-4xl px-4 py-8 sm:py-16">
           <div className="flex justify-center mb-4 sm:mb-6">
             <img
-              src="https://static.readdy.ai/image/c5957e8dc1f6ecb238bc8fb2cc6df703/f65b84f7acdc275d4b058aa8a3602560.jfif"
+              src="/images/logo.jpeg"
               alt="Yaoundé Labelle"
-              className="h-16 w-auto sm:h-24 filter brightness-0 invert"
+              className="h-16 w-16 object-cover rounded-sm"
             />
           </div>
           <h1
@@ -639,7 +644,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 sm:p-8 text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600"></i>
+                {/* <i className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600"></i> */}
+                <FaLocationDot className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600"/>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 Yaoundé
@@ -658,7 +664,8 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 sm:p-8 text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600"></i>
+                {/* <i className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600"></i> */}
+                <FaLocationDot className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600"/>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 Douala
@@ -713,9 +720,9 @@ export default function Home() {
             <div className="sm:col-span-2">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://static.readdy.ai/image/c5957e8dc1f6ecb238bc8fb2cc6df703/f65b84f7acdc275d4b058aa8a3602560.jfif"
+                  src="/images/logo.jpeg"
                   alt="Yaoundé Labelle"
-                  className="h-10 sm:h-12 w-auto filter brightness-0 invert mr-3"
+                  className="h-10 w-10 object-cover rounded-sm shadow-lg"
                 />
               </div>
               <h3
@@ -742,10 +749,11 @@ export default function Home() {
                   link={"https://wa.me/237652148288"}
                   icon={"/images/whatsapp.png"}
                 />
-                <WebIcon
-                  link={"https://tel/237699372160"}
-                  icon={"/images/whatsapp.png"}
-                />
+                <div className="w-10 h-10 bg-white flex items-center justify-center rounded-full shadow-lg">
+                  <Link type="tel" href={"tel:+237699372160"}>
+                    <MdPhone className="w-5 h-5 text-black" />
+                  </Link>
+                </div>
               </div>
             </div>
 
