@@ -6,7 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdPhone } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-
+import { FaTruck } from "react-icons/fa";
+import { MdSupportAgent } from "react-icons/md";
+import { BsShieldCheck } from "react-icons/bs";
+import { GiSkills } from "react-icons/gi";
+import { FaHandshake } from "react-icons/fa";
+import { FaLightbulb } from "react-icons/fa";
+import { RiBrainLine } from "react-icons/ri";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -245,7 +251,7 @@ export default function Home() {
                   <p className="text-gray-700 text-sm sm:text-base">
                     Sous la direction de{" "}
                     <span className="font-semibold text-orange-600">
-                      Balla Biloa Yvon Thierry
+                      Mballa Biloa Yvon Thierry
                     </span>
                     , Yaoundé Labelle s'engage à maintenir les plus hauts
                     standards de qualité tout en offrant des solutions
@@ -280,7 +286,7 @@ export default function Home() {
           <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-award-line text-xl sm:text-2xl text-orange-600"></i>
+                <RiBrainLine className="ri-award-line text-xl sm:text-2xl text-orange-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                 Expertise
@@ -293,7 +299,7 @@ export default function Home() {
 
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-group-line text-xl sm:text-2xl text-blue-600"></i>
+                <FaHandshake className="ri-group-line text-xl sm:text-2xl text-blue-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                 Partenariat
@@ -306,7 +312,7 @@ export default function Home() {
 
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:col-span-2 lg:col-span-1">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-leaf-line text-xl sm:text-2xl text-green-600"></i>
+                <FaLightbulb className="ri-leaf-line text-xl sm:text-2xl text-green-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                 Innovation
@@ -571,7 +577,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-center hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-truck-line text-xl sm:text-2xl text-orange-600"></i>
+                <FaTruck className="ri-truck-line text-xl sm:text-2xl text-orange-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 Livraison Rapide
@@ -590,7 +596,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-center hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-shield-check-line text-xl sm:text-2xl text-orange-600"></i>
+                <BsShieldCheck className="ri-customer-service-2-line text-xl sm:text-2xl text-orange-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 Qualité Garantie
@@ -609,7 +615,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-center hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-customer-service-2-line text-xl sm:text-2xl text-orange-600"></i>
+                <MdSupportAgent className="ri-customer-service-2-line text-xl sm:text-2xl text-orange-600" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 Support Client
@@ -644,8 +650,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 sm:p-8 text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                {/* <i className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600"></i> */}
-                <FaLocationDot className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600"/>
+                <FaLocationDot className="ri-map-pin-2-fill text-2xl sm:text-3xl text-orange-600" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 Yaoundé
@@ -664,8 +669,7 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 sm:p-8 text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                {/* <i className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600"></i> */}
-                <FaLocationDot className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600"/>
+                <FaLocationDot className="ri-ship-2-fill text-2xl sm:text-3xl text-blue-600" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 Douala
