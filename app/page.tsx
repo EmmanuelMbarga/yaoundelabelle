@@ -216,7 +216,7 @@ export default function Home() {
                   Créée en{" "}
                   <span className="font-bold text-orange-600">2013</span> par{" "}
                   <span className="font-bold text-orange-600">
-                    Balla Biloa Yvon Thierry
+                    Mballa Biloa Yvon Thierry
                   </span>
                   , Yaoundé Labelle s'est imposée comme un acteur majeur dans la
                   fourniture de matériaux de construction au Cameroun. Fort de{" "}
