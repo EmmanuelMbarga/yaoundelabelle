@@ -57,7 +57,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.yaoundelabelle.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ea580c" />
-        <link rel="icon" href="/favicon.io" />
+        <link rel="icon" href="/images/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
