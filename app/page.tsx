@@ -268,7 +268,9 @@ export default function Home() {
                 <div
                   className="w-full h-64 sm:h-80 lg:h-96 bg-cover bg-center rounded-lg shadow-lg object-top"
                   style={{
-                    backgroundImage: `url('https://readdy.ai/api/search-image?query=Professional%20African%20construction%20company%20office%20interior%20with%20modern%20furniture%2C%20elegant%20reception%20area%2C%20construction%20materials%20samples%20displayed%2C%20African%20business%20professional%20in%20suit%2C%20warm%20natural%20lighting%2C%20contemporary%20African%20office%20design%2C%20clean%20minimalist%20aesthetic%2C%20professional%20construction%20industry%20atmosphere%2C%20high%20quality%20business%20photography&width=600&height=400&seq=company-history&orientation=landscape')`,
+                    backgroundImage: `url('/images/iconProf.jpeg')`,
+                    backgroundRepeat:'no-repeat',
+                    backgroundSize:"cover"
                   }}
                 ></div>
 
