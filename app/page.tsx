@@ -16,7 +16,17 @@ import { RiBrainLine } from "react-icons/ri";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
+tsx
+  const handleConversion = () =>{
+    if (typeof window !==
+        ¨undefined¨ && typeof window.gtag == ¨function¨) {
+      window.gtag(¨event¨,¨conversion¨, {
+        send_to:
+          ¨AW-17408359284/
+          YOUR_EVENT_ID¨,
+      });
+    }
+  };
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-amber-50">
       {/* Navigation */}
