@@ -3,22 +3,33 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
-tsx
-  import head from 'next/head';
-const GoogleAdsScript = () =>
-  (
-    <Head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17408359284"></script>
-<script
-  dangerouslySetInnerHTML={{_html:
-                             window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    import Script from "next/script";
+import "./globals.css";
 
-  gtag('config', 'AW-17408359284');
-      }}'
-      />
-  </Head>
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KPF7TG4B";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr">
+      <head>
+        {/* Initialisation de dataLayer */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+            });
+          `}
+        </Script>
+
+        {/* Script officiel Google Tag Manager */}
+        <Script
+          id="gtm-script"
+          src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+          strategy="afterInteractive"
+        />
+      </head>
 );
 
 export default function RootLayout({
@@ -30,17 +41,16 @@ export default function RootLayout({
     <html lang="fr" className={geistSans.variable{geistMono.variable}}>
       
       <body>
-        tsx
-<noscript
-  dangerouslySetInnerHTML={{
-    __html: `
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPF7TG4B"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    `,
-  }}
-/>
+         {/* Fallback recommandé par Google */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
 
-        <GoogleAdsScript />
         {children}
       </body>
     </html>
