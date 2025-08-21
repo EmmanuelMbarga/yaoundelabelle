@@ -28,8 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={geistSans.variable{geistMono.variable}}>
-      tsx
+      
       <body>
+        tsx
 <noscript
   dangerouslySetInnerHTML={{
     __html: `
