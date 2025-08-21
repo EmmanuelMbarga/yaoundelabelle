@@ -28,7 +28,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={geistSans.variable{geistMono.variable}}>
+      tsx
       <body>
+<noscript
+  dangerouslySetInnerHTML={{
+    __html: `
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPF7TG4B"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    `,
+  }}
+/>
+
         <GoogleAdsScript />
         {children}
       </body>
