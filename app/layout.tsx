@@ -1,1 +1,138 @@
 
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+    import Script from "next/script";
+import "./globals.css";
+
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KPF7TG4B";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr">
+      <head>
+        {/* Initialisation de dataLayer */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+            });
+          `}
+        </Script>
+
+        {/* Script officiel Google Tag Manager */}
+        <Script
+          id="gtm-script"
+          src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+          strategy="afterInteractive"
+        />
+        
+        // lien d'analyse GOOGLE-ANALYTIC
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRXB4F4S0G"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-PRXB4F4S0G');
+        </script>
+
+
+      </head>
+);
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="fr" className={geistSans.variable{geistMono.variable}}>
+      
+      <body>
+         {/* Fallback recommandé par Google */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+    </Head> 
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Yaoundé Labelle - Matériaux de Construction au Cameroun",
+  description: "Fournisseur de matériaux de construction au Cameroun - Sable, gravier, granite, planches. Livraison Yaoundé et Douala. Devis gratuit.",
+  keywords: "matériaux construction, Cameroun, Yaoundé, Douala, sable, gravier, granite, planches, BTP, construction",
+  authors: [{ name: "Yaoundé Labelle" }],
+  creator: "Yaoundé Labelle",
+  publisher: "Yaoundé Labelle",
+  metadataBase: new URL('https://www.yaoundelabelle.com'),
+  alternates: {
+    canonical: 'https://www.yaoundelabelle.com',
+  },
+  openGraph: {
+    title: "Yaoundé Labelle - Matériaux de Construction",
+    description: "Fournisseur de matériaux de construction au Cameroun - Sable, gravier, granite, planches",
+    url: 'https://www.yaoundelabelle.com',
+    siteName: 'Yaoundé Labelle',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Yaoundé Labelle - Matériaux de Construction",
+    description: "Fournisseur de matériaux de construction au Cameroun",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="canonical" href="https://www.yaoundelabelle.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ea580c" />
+        <link rel="icon" href="/images/favicon.ico" />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
